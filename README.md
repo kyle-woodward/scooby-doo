@@ -1,2 +1,2 @@
 # scooby-doo
-like zoinks
+like zoinks - leveling up python and python packaging skillz
