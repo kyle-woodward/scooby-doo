@@ -1,4 +1,4 @@
-from scoobydoo import animals
+from characters import animals
 
 # initizialize custom instance of animals class
 scrappy = animals("scrappy",["Puppy-Power!","Lemme at em!"])
