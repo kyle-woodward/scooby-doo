@@ -1,29 +1,38 @@
 import random
-
+from catchphrases import phrases
+# parent class
 class Character:
     def __init__(self,name):
         self.name=name
     
-    def gimme_a_catchphrase(self,n):
-        phrase_list = self.phrases[n]
-        return random.choice(phrase_list)
+    def gimme_a_catchphrase(self,name):
+        kind = self.kind
+        options = phrases[kind][name]
+        #print(kind_opts)
+        return random.choice(options)
+        
 
-# define child class of Character
+# define child classes of Character
 class People(Character):
-    kind = 'human'         # class variable shared by all instances
-
+    kind = 'person' # class variable shared by all instances
     def __init__(self, name, shirtcolor,gender):
-        super(Character, self).__init__(name)    # instance variable unique to each instance
-        self.shirtcolor = shirtcolor
+        super().__init__(name)  # inherits Character class attributes
+        self.shirtcolor = shirtcolor # unique attributes to the People sub-class
         self.gender = gender
-
-shaggy = People('shaggy')
-    
+   
 class Animals(Character):
+    kind='animal'
     def __init__(self, name, species):
-        super(Character, self).__init__(name)    # instance variable unique to each instance
+        super().__init__(name)
         self.species = species
 
 class Villains(Character):
+    kind='villain'
     def __init__(self,name,unmasked=False):
-        super(Character, self).__init__(name)
+        super().__init__(name)
+        self.unmasked=unmasked
+    # how to deal with unmasked bool? gimme_a_catchphrase is Villains parent method but returning unmasked phrase is only a Villains.method
+    # def unmasked_phrase(unmasked):
+    #     if unmasked:
+    #         return "I would have gotten away with it too, if it weren't for those meddling kids!"
+    #     else:
