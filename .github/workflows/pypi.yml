@@ -2,8 +2,7 @@
 # For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
 
 name: pypi
-permissions:
-    id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+
 on:
     push:
         branches:
@@ -13,6 +12,9 @@ on:
 
 jobs:
     deploy:
+        permissions:
+            id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+        
         runs-on: ubuntu-latest
 
         steps:
