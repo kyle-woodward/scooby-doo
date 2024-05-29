@@ -5,8 +5,11 @@ name: pypi
 permissions:
     id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
 on:
-    release:
-        types: [created]
+    push:
+        branches:
+            - main
+    # release:
+    #     types: [created]
 
 jobs:
     deploy:
