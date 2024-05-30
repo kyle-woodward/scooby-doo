@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 # change all this
 setup(
     name="scoobydoo",
-    version="0.0",
+    version="0.1",
     description="Giving Scooby Doo Character Catch Phrases",
     long_description=long_description,
     long_description_content_type="text/markdown",
